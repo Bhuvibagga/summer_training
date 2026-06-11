@@ -101,4 +101,4 @@ const student = {
 * Function declarations and arrow functions
 * Local and global scope
 * Arrays and objects
-* Higher-order methods such as `map()`, `filter()`, and `reduce()`
+

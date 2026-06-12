@@ -6,43 +6,69 @@
 
 body{
     font-family:Arial, sans-serif;
-    background:white;
+    background:lightgray;
     padding:40px;
-    line-height:1.6;
 }
 
 .profile-card{
-    width:100%;
-    max-width:1200px;
+    max-width:1000px;
     margin:auto;
 }
 
 h1{
-    font-size:42px;
-    margin-bottom:20px;
+    text-align:center;
+    margin-bottom:15px;
+    font-size:50px;
+}
+
+nav{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+nav a{
+    text-decoration:none;
+    color:black;
+    margin:0 15px;
+    font-weight:bold;
 }
 
 section{
-    margin-top:30px;
+    background:white;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:10px;
+    box-shadow:0 0 8px lightgray;
 }
 
 h2{
-    font-size:30px;
-    margin-bottom:10px;
+    margin-bottom:15px;
+    font-size:22px;
 }
 
 p{
-    font-size:18px;
+    line-height:1.8;
 }
 
 ul{
     margin-left:25px;
-    margin-top:10px;
 }
 
 li{
     margin-bottom:8px;
-    font-size:18px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    margin-bottom:15px;
+}
+
+button{
+    padding:10px 20px;
+    cursor:pointer;
 }
 
 @media(max-width:768px){
@@ -52,15 +78,11 @@ li{
     }
 
     h1{
-        font-size:32px;
+        font-size:35px;
     }
 
-    h2{
-        font-size:24px;
-    }
-
-    p,
-    li{
-        font-size:16px;
+    nav a{
+        display:block;
+        margin:10px 0;
     }
 }

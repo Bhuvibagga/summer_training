@@ -50,7 +50,7 @@ const learningList = document.createElement("ul");
 const learn1 = document.createElement("li");
 learn1.textContent = "Data structures.";
 const learn2 = document.createElement("li");
-learn2.textContent = "Algorithms.";
+learn2.textContent = "Artificial intelligence and machine learning.";
 
 learningList.appendChild(learn1);
 learningList.appendChild(learn2);

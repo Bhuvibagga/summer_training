@@ -6,23 +6,20 @@
 
 body{
     font-family:Arial, sans-serif;
-    background:lightgray;
+    background:white;
     padding:40px;
+    line-height:1.6;
 }
 
 .profile-card{
-    width:90%;
-    max-width:1000px;
+    width:100%;
+    max-width:1200px;
     margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 0 10px gray;
 }
 
 h1{
+    font-size:42px;
     margin-bottom:20px;
-    font-size:40px;
 }
 
 section{
@@ -30,12 +27,11 @@ section{
 }
 
 h2{
+    font-size:30px;
     margin-bottom:10px;
-    font-size:28px;
 }
 
 p{
-    line-height:1.6;
     font-size:18px;
 }
 
@@ -52,11 +48,6 @@ li{
 @media(max-width:768px){
 
     body{
-        padding:15px;
-    }
-
-    .profile-card{
-        width:100%;
         padding:20px;
     }
 

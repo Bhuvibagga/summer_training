@@ -64,3 +64,23 @@ button{
     color:black;
     margin-top:10px;
 }
+
+#forecast{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.forecast-card{
+    background:rgb(224, 161, 224);
+    color:rgb(116, 2, 116);
+    padding:15px;
+    border-radius:10px;
+    width:120px;
+    text-align:center;
+}
+
+.forecast-card img{
+    width:50px;
+}

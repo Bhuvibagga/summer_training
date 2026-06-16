@@ -1,0 +1,66 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:rgb(255, 182, 239);
+    color:rgb(116, 2, 116);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:40px;
+}
+
+.container{
+    width:900px;
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+.search-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+input{
+    flex:1;
+    padding:12px;
+}
+
+button{
+    padding:12px 20px;
+    cursor:pointer;
+}
+
+#WeatherCard{
+    margin-top:20px;
+    background:rgb(224, 161, 224);
+    padding:20px;
+    border-radius:10px;
+}
+
+.city{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.temp{
+    font-size:50px;
+}
+
+.history-item{
+    cursor:pointer;
+    margin:5px 0;
+    color:purple;
+}
+
+#Loading{
+    color:black;
+    margin-top:10px;
+}

@@ -1,0 +1,22 @@
+header {
+  padding: 20px;
+  background: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color:rgb(148, 72, 105);
+}
+
+main {
+  padding: 40px;
+}

@@ -1,0 +1,26 @@
+.megaMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  padding: 30px 60px;
+}
+
+.megaMenu h3 {
+  margin-bottom: 12px;
+}
+
+.megaMenu p {
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+.megaMenu p:hover {
+  text-decoration: underline;
+}

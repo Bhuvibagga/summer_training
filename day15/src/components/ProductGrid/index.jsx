@@ -1,8 +1,10 @@
-import ProductCard from "./ProductCard";
+import React from "react";
+import ProductCard from "../ProductCard";
+import styles from "./ProductGrid.module.css";
 
 function ProductGrid({ products }) {
   return (
-    <div className="product-grid">
+    <div className={styles.productGrid}>
       {products.map((product) => (
         <ProductCard
           key={product.id}

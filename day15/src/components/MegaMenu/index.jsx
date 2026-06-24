@@ -1,4 +1,7 @@
-function MegaMenu({ type, closeMenu }) {
+import React from "react";
+import styles from "./MegaMenu.module.css";
+
+export default function MegaMenu({ category, closeMenu }) {
   const menuData = {
     men: {
       featured: ["New Arrivals", "Sportswear", "Summer Collection"],
@@ -22,13 +25,10 @@ function MegaMenu({ type, closeMenu }) {
     },
   };
 
-  const data = menuData[type];
+  const data = menuData[category] || menuData.men;
 
   return (
-    <div
-      className="mega-menu"
-      onMouseLeave={closeMenu}
-    >
+    <div className={styles.megaMenu} onMouseLeave={closeMenu}>
       <div>
         <h3>FEATURED</h3>
         {data.featured.map((item) => (
@@ -59,5 +59,3 @@ function MegaMenu({ type, closeMenu }) {
     </div>
   );
 }
-
-export default MegaMenu;

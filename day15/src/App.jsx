@@ -1,13 +1,12 @@
 import { useState } from "react";
-import "./App.css";
 
 import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import CategoryCards from "./components/CategoryCards";
-import MegaMenu from "./components/MegaMenu";
 import ProductGrid from "./components/ProductGrid";
 import Footer from "./components/Footer";
+import appStyles from "./App.module.css";
 
 import menProducts from "./data/menProducts";
 import womenProducts from "./data/womenProducts";
@@ -31,16 +30,7 @@ function App() {
     <div>
       <TopBar />
 
-      <Navbar
-        setActiveMenu={setActiveMenu}
-      />
-
-      {activeMenu && (
-        <MegaMenu
-          type={activeMenu}
-          closeMenu={() => setActiveMenu("")}
-        />
-      )}
+      <Navbar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
 
       <Hero />
 
@@ -48,11 +38,10 @@ function App() {
         setSelectedCategory={setSelectedCategory}
       />
 
-      <div className="results">
+      <div className={appStyles.results}>
         <h2>
           {selectedCategory.charAt(0).toUpperCase() +
-            selectedCategory.slice(1)}{" "}
-          Collection
+            selectedCategory.slice(1)} Collection
         </h2>
       </div>
 

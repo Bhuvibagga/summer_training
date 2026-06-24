@@ -1,0 +1,44 @@
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ddd;
+  background: white;
+}
+
+.logo {
+  width: 90px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 35px;
+  font-weight: 700;
+  margin-left: 60px;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.sale {
+  color: red;
+}

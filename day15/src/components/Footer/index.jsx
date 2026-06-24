@@ -1,8 +1,11 @@
+import React from "react";
+import styles from "./Footer.module.css";
+
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
 
-      <div className="footer-column">
+      <div className={styles.footerColumn}>
         <h3>PRODUCTS</h3>
         <p>Footwear</p>
         <p>Clothing</p>
@@ -10,7 +13,7 @@ function Footer() {
         <p>Outlet Sale</p>
       </div>
 
-      <div className="footer-column">
+      <div className={styles.footerColumn}>
         <h3>SPORTS</h3>
         <p>Running</p>
         <p>Football</p>
@@ -18,21 +21,21 @@ function Footer() {
         <p>Gym & Training</p>
       </div>
 
-      <div className="footer-column">
+      <div className={styles.footerColumn}>
         <h3>COLLECTIONS</h3>
         <p>Ultraboost</p>
         <p>Superstar</p>
         <p>Stan Smith</p>
       </div>
 
-      <div className="footer-column">
+      <div className={styles.footerColumn}>
         <h3>SUPPORT</h3>
         <p>Help</p>
         <p>Returns</p>
         <p>Order Tracker</p>
       </div>
 
-      <div className="footer-column">
+      <div className={styles.footerColumn}>
         <h3>COMPANY INFO</h3>
         <p>About Us</p>
         <p>Careers</p>

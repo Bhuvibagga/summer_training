@@ -1,0 +1,15 @@
+.hero {
+  padding: 60px;
+}
+
+.hero p {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: 58px;
+  font-weight: 900;
+  line-height: 1.1;
+  max-width: 1200px;
+}

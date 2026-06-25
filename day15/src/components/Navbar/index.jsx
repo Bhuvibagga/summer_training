@@ -1,43 +1,77 @@
-import React from "react";
+import { useState } from "react";
 import styles from "./Navbar.module.css";
 import MegaMenu from "../MegaMenu";
 
-export default function Navbar({ activeMenu, setActiveMenu }) {
+export default function Navbar() {
+
+  const [activeMenu, setActiveMenu] = useState("");
+
   return (
-    <nav
-      className={styles.navbar}
+    <div
+      className={styles.navWrapper}
       onMouseLeave={() => setActiveMenu("")}
     >
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg"
-        alt="logo"
-        className={styles.logo}
-      />
 
-      <div className={styles.navLinks}>
-        <span className={styles.sale}>END OF SEASON SALE</span>
+      <nav className={styles.navbar}>
 
-        <span onMouseEnter={() => setActiveMenu("men")}>MEN</span>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg"
+          alt="logo"
+          className={styles.logo}
+        />
 
-        <span onMouseEnter={() => setActiveMenu("women")}>WOMEN</span>
+        <div className={styles.navLinks}>
 
-        <span onMouseEnter={() => setActiveMenu("kids")}>KIDS</span>
-      </div>
+          <span className={styles.sale}>
+            END OF SEASON SALE
+          </span>
 
-      <div className={styles.navRight}>
-        <div className={styles.searchBox}>
-          <input type="text" placeholder="Search" className={styles.input} />
-          <span>🔍</span>
+          <span
+            onMouseEnter={() => setActiveMenu("men")}
+          >
+            MEN
+          </span>
+
+          <span
+            onMouseEnter={() => setActiveMenu("women")}
+          >
+            WOMEN
+          </span>
+
+          <span
+            onMouseEnter={() => setActiveMenu("kids")}
+          >
+            KIDS
+          </span>
+
         </div>
 
-        <span>👤</span>
-        <span>♡</span>
-        <span>🛍</span>
-      </div>
+        <div className={styles.navRight}>
+
+          <div className={styles.searchBox}>
+            <input
+              className={styles.input}
+              placeholder="Search"
+            />
+
+            <span>🔍</span>
+          </div>
+
+          <span>👤</span>
+          <span>♡</span>
+          <span>🛍️</span>
+
+        </div>
+
+      </nav>
 
       {activeMenu && (
-        <MegaMenu category={activeMenu} closeMenu={() => setActiveMenu("")} />
+        <MegaMenu
+          category={activeMenu}
+          closeMenu={() => setActiveMenu("")}
+        />
       )}
-    </nav>
+
+    </div>
   );
 }

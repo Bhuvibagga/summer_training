@@ -1,55 +1,40 @@
-import { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 
-import TopBar from "./components/TopBar";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import CategoryCards from "./components/CategoryCards";
-import ProductGrid from "./components/ProductGrid";
-import Footer from "./components/Footer";
-import appStyles from "./App.module.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Product from "./pages/Product";
 
-import menProducts from "./data/menProducts";
-import womenProducts from "./data/womenProducts";
-import kidsProducts from "./data/kidsProducts";
 function App() {
-  const [activeMenu, setActiveMenu] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("men");
 
-  const getProducts = () => {
-    switch (selectedCategory) {
-      case "women":
-        return womenProducts;
-      case "kids":
-        return kidsProducts;
-      default:
-        return menProducts;
-    }
-  };
+    return (
 
-  return (
-    <div>
-      <TopBar />
+        <Routes>
 
-      <Navbar activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
+            <Route
+                path="/"
+                element={<Navigate to="/home" />}
+            />
 
-      <Hero />
+            <Route
+                path="/home"
+                element={<Home />}
+            />
 
-      <CategoryCards
-        setSelectedCategory={setSelectedCategory}
-      />
+            <Route
+                path="/about"
+                element={<About />}
+            />
 
-      <div className={appStyles.results}>
-        <h2>
-          {selectedCategory.charAt(0).toUpperCase() +
-            selectedCategory.slice(1)} Collection
-        </h2>
-      </div>
+            <Route
+                path="/product/:product_id"
+                element={<Product />}
+            />
+        <Route path="*" element={<Navigate to="/home" replace />} />
+        </Routes>
+      
 
-      <ProductGrid products={getProducts()} />
+    );
 
-      <Footer />
-    </div>
-  );
 }
 
 export default App;

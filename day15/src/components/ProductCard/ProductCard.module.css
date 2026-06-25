@@ -27,3 +27,40 @@
 .productInfo p {
   font-size: 24px;
 }
+.productName{
+    text-decoration:none;
+    color:#000;
+    font-weight:700;
+}
+
+.productName:visited{
+    color:black;
+}
+
+.productName:hover{
+    text-decoration:underline;
+}
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cardLink:visited {
+  color: inherit;
+}
+
+.cardLink:hover {
+  color: inherit;
+}
+
+.productInfo h3 {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.productInfo p {
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+}

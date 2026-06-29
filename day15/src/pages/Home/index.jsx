@@ -1,52 +1,45 @@
-import { useState } from "react";
-
-import TopBar from "../../components/TopBar";
+import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
-import Hero from "../../components/Hero";
-import CategoryCards from "../../components/CategoryCards";
-import ProductGrid from "../../components/ProductGrid";
 import Footer from "../../components/Footer";
-
-import menProducts from "../../data/menProducts";
-import womenProducts from "../../data/womenProducts";
-import kidsProducts from "../../data/kidsProducts";
-
-import styles from "./Home.module.css";
+import ProductGrid from "../../components/ProductGrid";
+import PaginationBar from "../../components/PaginationBar";
+import { getProducts } from "../../services/productApi";
 
 function Home() {
-  const [selectedCategory, setSelectedCategory] = useState("men");
 
-  
+    const [products, setProducts] = useState([]);
+    const [page, setPage] = useState(1);
 
-  let products = menProducts;
+    useEffect(() => {
 
-  if (selectedCategory === "women") {
-    products = womenProducts;
-  }
+        const fetchProducts = async () => {
 
-  if (selectedCategory === "kids") {
-    products = kidsProducts;
-  }
+            const data = await getProducts(10, (page - 1) * 10);
+            setProducts(data.products);
 
-  return (
-    <>
-      <TopBar />
+        };
 
-      <Navbar />
+        fetchProducts();
 
-      <Hero />
+    }, [page]);
 
-      <CategoryCards
-        setSelectedCategory={setSelectedCategory}
-      />
+    return (
 
-      <ProductGrid
-        products={products}
-      />
+        <>
+            <Navbar />
 
-      <Footer />
-    </>
-  );
+            <ProductGrid products={products} />
+
+            <PaginationBar
+                page={page}
+                setPage={setPage}
+            />
+
+            <Footer />
+        </>
+
+    );
+
 }
 
 export default Home;

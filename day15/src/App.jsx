@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Product from "./pages/Product";
+import About from "./pages/About";
 
 function App() {
 
@@ -29,9 +29,13 @@ function App() {
                 path="/product/:product_id"
                 element={<Product />}
             />
-        <Route path="*" element={<Navigate to="/home" replace />} />
+
+            <Route
+                path="*"
+                element={<Navigate to="/home" />}
+            />
+
         </Routes>
-      
 
     );
 

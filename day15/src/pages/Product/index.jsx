@@ -7,6 +7,7 @@ import Footer from "../../components/Footer";
 import { getProductById } from "../../services/productApi";
 
 import styles from "./Product.module.css";
+import useCart from "../../hooks/useCart";
 
 function Product() {
 
@@ -14,6 +15,7 @@ function Product() {
 
     const [product, setProduct] = useState(null);
     const [selectedImage, setSelectedImage] = useState("");
+    const { addToCart } = useCart();
 
     useEffect(() => {
 
@@ -163,8 +165,18 @@ function Product() {
 
                         </div>
 
-                        <button className={styles.cartButton}>
-                             Add to Cart
+                        <button
+                             className={styles.cartButton}
+                            onClick={() =>
+                                addToCart({
+                                    id: product.id,
+                                    title: product.title,
+                                    thumbnail: selectedImage,
+                                    price: product.price,
+                                })
+                            }
+                        >
+                            🛒 Add to Cart
                         </button>
 
                     </div>

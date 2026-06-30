@@ -51,3 +51,42 @@
 .sale {
   color: red;
 }
+.cartLink{
+    text-decoration:none;
+    color:black;
+}
+
+.cartIcon{
+    position:relative;
+    cursor:pointer;
+    font-size:22px;
+}
+
+.cartCount{
+
+    position:absolute;
+
+    top:-10px;
+
+    right:-12px;
+
+    background:#ff4d4f;
+
+    color:white;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:12px;
+
+    font-weight:bold;
+}

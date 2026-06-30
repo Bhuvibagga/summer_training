@@ -1,10 +1,13 @@
 import { useState } from "react";
 import styles from "./Navbar.module.css";
 import MegaMenu from "../MegaMenu";
+import { Link } from "react-router-dom";
+import useCart from "../../hooks/useCart";
 
 export default function Navbar() {
 
   const [activeMenu, setActiveMenu] = useState("");
+  const { totalItems } = useCart();
 
   return (
     <div
@@ -59,7 +62,21 @@ export default function Navbar() {
 
           <span>👤</span>
           <span>♡</span>
-          <span>🛍️</span>
+          <Link to="/cart" className={styles.cartLink}>
+
+  <div className={styles.cartIcon}>
+
+    🛍
+
+    {totalItems > 0 && (
+      <span className={styles.cartCount}>
+        {totalItems}
+      </span>
+    )}
+
+  </div>
+
+</Link>
 
         </div>
 

@@ -47,3 +47,36 @@
   text-decoration: none;
   color: inherit;
 }
+.card{
+    display:flex;
+    flex-direction:column;
+}
+
+.cartButton{
+
+    margin-top:12px;
+
+    width:100%;
+
+    background:#6ea8ff;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:12px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.cartButton:hover{
+
+    background:#4c8ef8;
+
+}

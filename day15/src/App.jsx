@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import About from "./pages/About";
-
+import Cart from "./pages/Cart";
 function App() {
 
     return (
@@ -33,6 +33,10 @@ function App() {
             <Route
                 path="*"
                 element={<Navigate to="/home" />}
+            />
+            <Route
+                path="/cart"
+                element={<Cart />}
             />
 
         </Routes>

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
-
-import useCart from "../../hooks/useCart";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cart/cartSlice";
 
 function ProductCard({ id, image, name, price }) {
 
-  const { addToCart } = useCart();
+  const dispatch = useDispatch();
 
   const product = {
     id,
@@ -31,7 +31,13 @@ function ProductCard({ id, image, name, price }) {
 
       <button
         className={styles.cartButton}
-        onClick={() => addToCart(product)}
+        onClick={(e) => {
+
+    e.preventDefault();
+
+    dispatch(addToCart(product));
+
+}}
       >
         🛒 Add to Cart
       </button>

@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 import { getProductById } from "../../services/productApi";
+import { addToCart } from "../../features/cart/cartSlice";
 
 import styles from "./Product.module.css";
-import useCart from "../../hooks/useCart";
 
 function Product() {
 
     const { product_id } = useParams();
 
+    const dispatch = useDispatch();
+
     const [product, setProduct] = useState(null);
     const [selectedImage, setSelectedImage] = useState("");
-    const { addToCart } = useCart();
 
     useEffect(() => {
 
@@ -48,7 +50,7 @@ function Product() {
 
                 <div className={styles.breadcrumb}>
 
-                    <Link to="/home"> Home</Link>
+                    <Link to="/home">🏠 Home</Link>
 
                     <span>/</span>
 
@@ -81,19 +83,13 @@ function Product() {
                             {product.images.map((img, index) => (
 
                                 <img
-
                                     key={index}
-
                                     src={img}
-
                                     alt={product.title}
-
                                     className={`${styles.galleryImage} ${
                                         selectedImage === img ? styles.active : ""
                                     }`}
-
                                     onClick={() => setSelectedImage(img)}
-
                                 />
 
                             ))}
@@ -115,7 +111,7 @@ function Product() {
                         <h3>by {product.brand}</h3>
 
                         <div className={styles.discountBadge}>
-                             {Math.round(product.discountPercentage)}% OFF
+                            {Math.round(product.discountPercentage)}% OFF
                         </div>
 
                         <h2 className={styles.price}>
@@ -123,7 +119,7 @@ function Product() {
                         </h2>
 
                         <div className={styles.rating}>
-                             {product.rating} / 5
+                            ⭐ {product.rating} / 5
                         </div>
 
                         <p className={styles.description}>
@@ -144,16 +140,14 @@ function Product() {
 
                             <div className={styles.specRow}>
                                 <span>Availability</span>
-
                                 <strong className={styles.stock}>
                                     🟢 In Stock ({product.stock})
                                 </strong>
-
                             </div>
 
                             <div className={styles.specRow}>
                                 <span>Rating</span>
-                                <strong> {product.rating}</strong>
+                                <strong>⭐ {product.rating}</strong>
                             </div>
 
                             <div className={styles.specRow}>
@@ -166,14 +160,16 @@ function Product() {
                         </div>
 
                         <button
-                             className={styles.cartButton}
+                            className={styles.cartButton}
                             onClick={() =>
-                                addToCart({
-                                    id: product.id,
-                                    title: product.title,
-                                    thumbnail: selectedImage,
-                                    price: product.price,
-                                })
+                                dispatch(
+                                    addToCart({
+                                        id: product.id,
+                                        title: product.title,
+                                        thumbnail: selectedImage,
+                                        price: product.price,
+                                    })
+                                )
                             }
                         >
                             🛒 Add to Cart

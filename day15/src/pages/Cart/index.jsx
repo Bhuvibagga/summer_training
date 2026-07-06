@@ -1,18 +1,25 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
-import useCart from "../../hooks/useCart";
+import { useSelector, useDispatch } from "react-redux";
+
+import {
+  increaseQuantity,
+  decreaseQuantity,
+  removeFromCart,
+} from "../../features/cart/cartSlice";
 
 import styles from "./Cart.module.css";
 
 function Cart() {
 
-  const {
-    cart,
-    increaseQuantity,
-    decreaseQuantity,
-    totalPrice,
-  } = useCart();
+  const dispatch = useDispatch();
+
+  const cart = useSelector((state) => state.cart.cart);
+
+  const totalPrice = useSelector(
+    (state) => state.cart.totalPrice
+  );
 
   return (
     <>
@@ -53,7 +60,7 @@ function Cart() {
 
                   <button
                     onClick={() =>
-                      decreaseQuantity(product.id)
+                      dispatch(decreaseQuantity(product.id))
                     }
                   >
                     -
@@ -63,7 +70,7 @@ function Cart() {
 
                   <button
                     onClick={() =>
-                      increaseQuantity(product.id)
+                      dispatch(increaseQuantity(product.id))
                     }
                   >
                     +
@@ -72,11 +79,18 @@ function Cart() {
                 </div>
 
                 <h3>
-
                   $
                   {(product.price * product.quantity).toFixed(2)}
-
                 </h3>
+
+                <button
+                  className={styles.removeBtn}
+                  onClick={() =>
+                    dispatch(removeFromCart(product.id))
+                  }
+                >
+                  Remove
+                </button>
 
               </div>
 

@@ -90,3 +90,26 @@
 
     font-weight:bold;
 }
+.themeBtn{
+
+    border:none;
+
+    background:#f2f2f2;
+
+    border-radius:8px;
+
+    padding:8px 12px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.themeBtn:hover{
+
+    background:#d9d9d9;
+
+}

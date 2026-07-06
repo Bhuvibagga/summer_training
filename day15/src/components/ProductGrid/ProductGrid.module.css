@@ -1,7 +1,13 @@
 .productGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 35px;
-  padding: 40px 60px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px 20px;
+  padding: 28px 60px 40px;
+  align-items: stretch;
+}
+
+.productGrid > * {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

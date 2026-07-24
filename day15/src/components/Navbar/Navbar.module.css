@@ -1,0 +1,115 @@
+.navWrapper{
+    position:relative;
+}
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 95px;
+
+  padding: 0 40px;
+
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+
+  z-index: 1000;
+}
+
+.logo {
+  width: 90px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 35px;
+  font-weight: 700;
+  margin-left: 60px;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.sale {
+  color: red;
+}
+.cartLink{
+    text-decoration:none;
+    color:black;
+}
+
+.cartIcon{
+    position:relative;
+    cursor:pointer;
+    font-size:22px;
+}
+
+.cartCount{
+
+    position:absolute;
+
+    top:-10px;
+
+    right:-12px;
+
+    background:#ff4d4f;
+
+    color:white;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+.themeBtn{
+
+    border:none;
+
+    background:#f2f2f2;
+
+    border-radius:8px;
+
+    padding:8px 12px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.themeBtn:hover{
+
+    background:#d9d9d9;
+
+}

@@ -1,0 +1,48 @@
+.stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 8px 24px rgba(15,23,42,.06);
+}
+
+.stat-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+}
+
+.stat-icon.blue {
+    background: #2563eb;
+}
+
+.stat-icon.yellow {
+    background: #f59e0b;
+}
+
+.stat-icon.green {
+    background: #22c55e;
+}
+
+.stat-icon.red {
+    background: #ef4444;
+}
+
+.stat-content h4 {
+    margin: 0;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.stat-content h2 {
+    margin-top: 8px;
+    color: #1e293b;
+    font-size: 30px;
+}

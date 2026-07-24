@@ -1,0 +1,55 @@
+.kanban-column{
+
+    flex:1;
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border-color);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    min-height:560px;
+
+    transition:.25s;
+
+    box-shadow:0 8px 24px var(--shadow);
+}
+
+.kanban-column.drag-over{
+
+    border:2px dashed var(--primary);
+
+    background:var(--bg-tertiary);
+}
+
+.kanban-column-header{
+
+    margin-bottom:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.kanban-column-header h3{
+
+    margin:0;
+
+    color:var(--text-primary);
+
+    font-size:22px;
+
+    font-weight:700;
+}
+
+.kanban-column-body{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:16px;
+
+    min-height:450px;
+}

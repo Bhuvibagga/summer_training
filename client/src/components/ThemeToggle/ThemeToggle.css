@@ -1,0 +1,87 @@
+.theme-toggle{
+    width:52px;
+    height:52px;
+
+    border:none;
+    border-radius:16px;
+
+    background:var(--card-bg);
+    border:1px solid var(--border-color);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px var(--shadow);
+
+    transition:.25s;
+}
+
+.theme-toggle:hover{
+    transform:translateY(-2px);
+    background:var(--bg-tertiary);
+}
+
+.toggle-circle{
+
+    width:28px;
+    height:28px;
+
+    border-radius:50%;
+
+    background:var(--button-bg);
+
+    color:var(--button-text);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:.35s cubic-bezier(.22,.61,.36,1);
+
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+
+.toggle-circle.light{
+    transform:translateX(0);
+}
+
+.toggle-circle.dark{
+    transform:translateX(32px);
+}
+.theme-btn{
+    width:52px;
+    height:52px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:none;
+    outline:none;
+
+    border-radius:16px;
+
+    background:var(--card-bg);
+    color:var(--text-primary);
+
+    border:1px solid var(--border-color);
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:all .25s ease;
+
+    box-shadow:0 8px 20px var(--shadow);
+}
+
+.theme-btn:hover{
+    transform:translateY(-2px);
+
+    background:var(--bg-tertiary);
+
+    color:var(--primary);
+}

@@ -1,0 +1,144 @@
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:35px;
+}
+
+.header-left h1{
+    font-size:52px;
+    font-weight:700;
+    margin-top:4px;
+    color:var(--text-primary);
+    letter-spacing:-1px;
+}
+
+.header-left p{
+    color:var(--text-secondary);
+    margin-top:10px;
+    font-size:16px;
+}
+
+.header-greeting{
+    color:var(--text-secondary);
+    font-size:17px;
+    font-weight:600;
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* ---------------- Notification ---------------- */
+
+.notification-wrapper{
+    position:relative;
+}
+
+.notification-btn{
+    width:52px;
+    height:52px;
+
+    border:none;
+    border-radius:16px;
+
+    background:var(--card-bg);
+    border:1px solid var(--border-color);
+
+    color:var(--text-primary);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px var(--shadow);
+
+    transition:.25s;
+}
+
+.notification-btn:hover{
+    transform:translateY(-2px);
+    background:var(--bg-tertiary);
+}
+
+.notification-count{
+    position:absolute;
+    top:-5px;
+    right:-5px;
+
+    min-width:20px;
+    height:20px;
+
+    padding:0 5px;
+
+    border-radius:999px;
+
+    background:#ef4444;
+
+    color:white;
+
+    font-size:11px;
+    font-weight:700;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border:2px solid var(--card-bg);
+}
+
+/* ---------------- Primary Button ---------------- */
+
+.primary-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:14px 22px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--button-bg);
+
+    color:var(--button-text);
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+    box-shadow:0 12px 28px rgba(37,99,235,.25);
+}
+
+.primary-btn:hover{
+    transform:translateY(-2px);
+}
+
+.primary-btn svg{
+    font-size:15px;
+}
+
+@media(max-width:900px){
+
+.header{
+    flex-direction:column;
+    gap:25px;
+}
+
+.header-left h1{
+    font-size:40px;
+}
+
+.header-actions{
+    width:100%;
+    justify-content:flex-end;
+}
+
+}
